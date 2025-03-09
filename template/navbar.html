@@ -1,0 +1,62 @@
+{% extends "menulist.html" %}
+{% block content %}
+
+<nav class="bg-green-300 text-black shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    
+      <div class="flex items-center space-x-2">
+        <img class="rounded-full w-10", src="https://feastwithus.org.uk/wp-content/uploads/2023/09/Round-logo-green-1.png" alt="feast Logo" class="h-9 w-9">
+        <span class="text-xl font-bold"><a href="{% url "menulist" %}" >Every meal is a celebration</a></span>
+      </div>
+      <div class="ml-3">
+        {% comment %} {% if not user.is_authenticated %} {% endcomment %}
+        <a href="{% url 'menulist'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">home</a>
+        {% comment %} <a href="{% url 'addmenu'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">Add menu</a> {% endcomment %}
+        <a href="{% url 'login'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">Signin</a>
+        <a href="{% url 'signup'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">SignUp</a> 
+        {% comment %} {% endif %}  {% endcomment %}
+
+
+      
+      <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-40 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+          <div class="py-1">
+            {% comment %} {% if user.is_authenticated %}
+            <a href="{% url 'signout' %}" type="submit" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">SignOut</a>
+            {% endif %} {% endcomment %}
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Help</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+              <a href="{% url 'signout'%}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Signout</a> 
+        {% comment %} {% endif %}  {% endcomment %}
+              
+              {% comment %} <a href="{% url 'signout' %}" type="submit" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">SignOut</a> {% endcomment %}
+
+          </div>
+      </div>
+      {% comment %} {% if not user.is_authenticated %}
+            <a href="{% url 'login'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">Signin</a>
+            <a href="{% url 'signup'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">SignUp</a> 
+            {% endif %}
+     {% endcomment %}
+            <button onclick="toggleDropdown()" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 focus:outline-none">
+                More
+            </button>
+            <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-40 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+              <div class="py-1">
+                {% comment %} {% if user.is_authenticated %}
+                <a href="{% url 'signout' %}" type="submit" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">SignOut</a>
+                {% endif %} {% endcomment %}
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">home</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Help</a>
+                  {% comment %} <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a> {% endcomment %}
+                  
+                  {% comment %} <a href="{% url 'signout' %}" type="submit" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">SignOut</a> {% endcomment %}
+
+              </div>
+          </div>
+        
+    
+    </div>
+  </nav>
+{% endblock content %}
+ 
