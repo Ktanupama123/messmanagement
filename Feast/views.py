@@ -118,6 +118,10 @@ def signoutview(request):
     logout(request)
     messages.success(request, 'You have been logged out successfully.')
     return redirect('login')
+def home_view(request):
+   return render(request,'home.html',{'user':request.user})
+def main_view(request):
+   return render(request,'main.html',{'user':request.user})
 @login_required(login_url='login')
 def menulist(request):
     pdt = None

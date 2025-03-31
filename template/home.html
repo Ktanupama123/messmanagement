@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEAST</title>  
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+{% block content %}
+{% include "navbar.html" %}
+<div class="relative flex items-center justify-center h-screen overflow-hidden">
+     <div class="relative z-30 p-5 text-2xl text-white bg-opacity-50 rounded-xl">
+            <button class="px-4 py-2  border font-bold border-blue-500 b text-white rounded-lg hover:bg-green-200 hover:text-black hover:animate-pulse">
+                <a href="{% url "main" %}">
+                        Choose Your Menu
+                </a>
+                </button>
+      </div>
+        
+            
+    </div>
+    
+ {% endblock content %}
+</body>
+</html>

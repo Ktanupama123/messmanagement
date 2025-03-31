@@ -11,7 +11,7 @@
       <div class="ml-3">
         {% comment %} {% if not user.is_authenticated %} {% endcomment %}
         <a href="{% url 'menulist'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">home</a>
-        {% comment %} <a href="{% url 'addmenu'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">Add menu</a> {% endcomment %}
+        <a href="{% url 'addmenu'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">Add menu</a>
         <a href="{% url 'login'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">Signin</a>
         <a href="{% url 'signup'%}" class="rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700 hover:text-white">SignUp</a> 
         {% comment %} {% endif %}  {% endcomment %}
